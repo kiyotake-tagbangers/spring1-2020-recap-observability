@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/postgres
+    username: postgres
+    password: password
+    hikari:
+      connection-timeout: 1000
+  jpa:
+    generate-ddl: true
+management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+  endpoint:
+    health:
+      show-details: always
