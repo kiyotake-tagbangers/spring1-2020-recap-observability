@@ -12,7 +12,7 @@
     <artifactId>sp1-2020-recap</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>sp1-2020-recap</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Demo project for Spring One 2020 recap</description>
 
     <properties>
         <java.version>11</java.version>
@@ -32,6 +32,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <!-- for cloud-watch auto-configuration(actuator doesn't support cloud-watch auto-configuration) -->
+        <!-- @see https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-metrics -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-aws</artifactId>
@@ -42,6 +44,9 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- micrometer-registry-cloudwatch2 uses aws-java-sdk2(software.amazon.awssdk:cloudwatch) -->
+        <!-- spring-cloud-aws doesn't support aws sdk 2.0 for now -->
+        <!-- @see https://github.com/spring-cloud/spring-cloud-aws/issues/267 -->
         <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-cloudwatch</artifactId>
