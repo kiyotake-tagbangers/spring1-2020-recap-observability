@@ -8,10 +8,10 @@ spring:
   jpa:
     generate-ddl: true
 management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: "*"
+  endpoints:
+    web:
+      exposure:
+        include: metrics
   endpoint:
     health:
       show-details: always
