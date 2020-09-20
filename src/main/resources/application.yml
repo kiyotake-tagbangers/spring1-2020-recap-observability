@@ -11,7 +11,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: metrics
+        include: metrics,health
   endpoint:
     health:
       show-details: always
